@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@okonomi/eslint-plugin-practice':
+        specifier: file:../
+        version: file:..
+
+packages:
+
+  '@okonomi/eslint-plugin-practice@file:..':
+    resolution: {directory: .., type: directory}
+
+snapshots:
+
+  '@okonomi/eslint-plugin-practice@file:..': {}

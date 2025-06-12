@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-practice",
+  "name": "@okonomi/eslint-plugin-practice",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
