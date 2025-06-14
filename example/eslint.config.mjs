@@ -22,6 +22,7 @@ export default defineConfig([
     rules: {
       "practice/no-foo": "error",
       "practice/no-jsx-foo": "error",
+      "practice/no-jsx-classname-forbidden": "error",
     }
   }
 ])

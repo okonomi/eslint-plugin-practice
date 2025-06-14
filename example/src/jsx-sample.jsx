@@ -3,7 +3,8 @@ const App = () => (
   <div>
     <foo /> {/* ここでエラーになるはず */}
     <Foo /> {/* これはOK */}
-    <span>bar</span>
+    <span className="forbidden">bar</span> {/* classNameチェック用: エラーになる */}
+    <span className="ok">baz</span> {/* OK */}
   </div>
 )
 
