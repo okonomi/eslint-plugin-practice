@@ -17,5 +17,8 @@ export default defineConfig([
         ...globals.node,
       },
     },
+    rules: {
+      "practice/no-foo": "error",
+    }
   }
 ])
