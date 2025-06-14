@@ -1,15 +1,7 @@
+import noFooRule from "./rules/no-foo"
+
 export default {
   rules: {
-    "no-foo": {
-      create(context) {
-        return {
-          Identifier(node) {
-            if (node.name === "foo") {
-              context.report({ node, message: "'foo' is not allowed." });
-            }
-          }
-        }
-      }
-    }
+    "no-foo": noFooRule,
   }
 }
