@@ -12,9 +12,9 @@
   "license": "UNLICENSED",
   "packageManager": "pnpm@10.12.1",
   "devDependencies": {
-    "@eslint/js": "^9.28.0",
-    "@okonomi/eslint-plugin-practice": "file:../",
-    "eslint": "^9.28.0",
+    "@eslint/js": "^9.29.0",
+    "@okonomi/eslint-plugin-practice": "file:..",
+    "eslint": "^9.29.0",
     "globals": "^16.2.0"
   }
 }
