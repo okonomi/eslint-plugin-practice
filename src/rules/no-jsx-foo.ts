@@ -1,8 +1,8 @@
-import { ESLintUtils, TSESTree } from '@typescript-eslint/utils'
+import { ESLintUtils } from '@typescript-eslint/utils'
 
 const createRule = ESLintUtils.RuleCreator(
   name => `https://example.com/rule/${name}`,
-);
+)
 
 export default createRule({
   name: 'no-jsx-foo',
