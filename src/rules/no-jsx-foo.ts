@@ -19,12 +19,12 @@ export default createRule({
   defaultOptions: [],
   create(context) {
     return {
-      JSXIdentifier(node: TSESTree.JSXIdentifier) {
+      JSXIdentifier(node) {
         if (node.name === 'foo') {
           context.report({ node, messageId: 'noJsxFoo' });
         }
       },
-      JSXOpeningElement(node: TSESTree.JSXOpeningElement) {
+      JSXOpeningElement(node) {
         if (
           node.name.type === 'JSXIdentifier' &&
           node.name.name === 'foo'
