@@ -11,6 +11,13 @@ function toKebabCase(str: string): string {
     .toLowerCase();
 }
 
+function kebabCaseClassList(classList: string): string {
+  return classList
+    .split(/\s+/)
+    .map(toKebabCase)
+    .join(' ');
+}
+
 export default createRule({
   name: 'jsx-classname-kebab-case',
   meta: {
@@ -31,7 +38,7 @@ export default createRule({
         if (node.name.name !== 'className' || !node.value) return;
         if (node.value.type === 'Literal' && typeof node.value.value === 'string') {
           const original = node.value.value;
-          const kebab = toKebabCase(original);
+          const kebab = kebabCaseClassList(original);
           if (original !== kebab) {
             context.report({
               node: node.value,
