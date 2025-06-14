@@ -21,11 +21,37 @@ export default createRule({
     return {
       JSXAttribute(node) {
         if (
-          node.name.name === 'className' &&
-          node.value.type === 'Literal' &&
-          node.value.value === 'forbidden'
+          node.name.name === 'className'
         ) {
-          context.report({ node, messageId: 'forbiddenClass' });
+          // 直接リテラルの場合
+          if (node.value && node.value.type === 'Literal' && node.value.value === 'forbidden') {
+            context.report({ node, messageId: 'forbiddenClass' });
+          }
+          // clsx関数経由の場合
+          if (
+            node.value &&
+            node.value.type === 'JSXExpressionContainer' &&
+            node.value.expression &&
+            node.value.expression.type === 'CallExpression' &&
+            node.value.expression.callee.type === 'Identifier' &&
+            node.value.expression.callee.name === 'clsx'
+          ) {
+            const args = node.value.expression.arguments;
+            for (const arg of args) {
+              if (
+                arg.type === 'Literal' && arg.value === 'forbidden'
+              ) {
+                context.report({ node, messageId: 'forbiddenClass' });
+              }
+              // テンプレートリテラル対応
+              if (
+                arg.type === 'TemplateLiteral' &&
+                arg.quasis.some(q => q.value.cooked === 'forbidden')
+              ) {
+                context.report({ node, messageId: 'forbiddenClass' });
+              }
+            }
+          }
         }
       },
     }
