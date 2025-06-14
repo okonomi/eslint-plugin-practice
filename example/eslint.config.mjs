@@ -23,6 +23,7 @@ export default defineConfig([
       "practice/no-foo": "error",
       "practice/no-jsx-foo": "error",
       "practice/no-jsx-classname-forbidden": "error",
+      "practice/jsx-classname-kebab-case": "warn",
     }
   }
 ])

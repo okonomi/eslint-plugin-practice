@@ -9,6 +9,9 @@ const App = () => (
     <span className="ok">baz</span> {/* OK */}
     <span className={clsx("forbidden")}>qux</span> {/* clsx経由: エラーになる */}
     <span className={clsx("ok")}>quux</span> {/* OK */}
+    <span className="camelCaseClass">camel</span> {/* kebab-caseルール: 警告 */}
+    <span className="snake_case_class">snake</span> {/* kebab-caseルール: 警告 */}
+    <span className="kebab-case-class">kebab</span> {/* OK */}
   </div>
 )
 
