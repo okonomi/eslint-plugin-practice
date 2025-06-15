@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`no-foo > should report 'foo' identifier 1`] = `"const foo = 1;"`;
